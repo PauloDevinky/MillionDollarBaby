@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Página VSL com Temporizador no Botão</title>
+  <style>
+    /* Estilos para o layout */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+    
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .top-bar {
+      width: 100%;
+      background-color: red;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+    }
+    
+    .vsl-section {
+      width: 100%;
+      background-color: white;
+      padding: 20px;
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    video {
+      width: 80%;
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    
+    .buy-button {
+      background-color: green;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    
+    .additional-info {
+      width: 80%;
+      max-width: 100%;
+      background-color: #f9f9f9;
+      padding: 20px;
+      text-align: center;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+    
+    .image-section {
+      width: 80%;
+      max-width: 100%;
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px; /* Espaçamento entre as imagens */
+    }
+    
+    .image-section img {
+      width: 30%;
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    
+    .final-button {
+      background-color: blue;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      margin-top: 40px; /* Aumento do espaçamento */
+      cursor: pointer;
+    }
+    
+    .footer {
+      width: 100%;
+      background-color: black;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+      margin-top: 20px; /* Espaçamento do rodapé */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-bar">
+      Assista ao vídeo antes que saia do ar dia: <span id="data"></span>
+    </div>
+    
+    <div class="vsl-section">
+      <video controls autoplay>
+        <source src="seu-video.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo HTML5.
+      </video>
+    </div>
+    
+    <div class="buy-button" id="buyButton">
+      EU QUERO!
+    </div>
+    
+    <div class="additional-info" id="additionalInfo">
+      <p>Parabéns! Você garantiu seu acesso ao curso incrível XYZ.</p>
+      <p>Aprenda as habilidades mais recentes em XYZ e alcance seus objetivos.</p>
+      <p>Este é apenas o começo da sua jornada para o sucesso!</p>
+    </div>
+    
+    <div class="image-section">
+      <!-- Aqui você pode inserir links das imagens -->
+      <!-- Exemplo: -->
+      <!-- <img src="imagem1.jpg" alt="Imagem 1"> -->
+      <!-- <img src="imagem2.jpg" alt="Imagem 2"> -->
+      <!-- <img src="imagem3.jpg" alt="Imagem 3"> -->
+    </div>
+    
+    <div class="final-button">
+      Última Chance - Clique Aqui!
+    </div>
+  </div>
+  
+  <div class="footer">
+    <p>
+      <a href="#">Termos de Uso</a> | 
+      <a href="#">Política de Privacidade</a>
+    </p>
+    <p>Este site não é afiliado ao Facebook.</p>
+  </div>
+  
+  <script>
+    // Código para exibir a data atual
+    var hoje = new Date();
+    var dia = hoje.getDate();
+    var mes = hoje.getMonth() + 1; // Janeiro é 0!
+    var ano = hoje.getFullYear();
+    
+    document.getElementById('data').innerText = dia + '/' + mes + '/' + ano;
+
+    // Exibir a seção de informações adicionais
+    document.getElementById('additionalInfo').style.display = 'block';
+  </script>
+</body>
+</html>
