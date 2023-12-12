@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Página VSL com Temporizador no Botão</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     /* Estilos para o layout */
     * {
@@ -16,6 +17,8 @@
     }
     
     .container {
+      width: 90%;
+      margin: 0 auto;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -38,7 +41,7 @@
     }
     
     video {
-      width: 80%;
+      width: 100%;
       max-width: 100%;
       border-radius: 10px;
     }
@@ -55,27 +58,26 @@
     }
     
     .additional-info {
-      width: 80%;
-      max-width: 100%;
+      width: 100%;
       background-color: #f9f9f9;
       padding: 20px;
       text-align: center;
       margin-top: 20px;
       border-radius: 10px;
+      display: none; /* Inicia oculto */
     }
     
     .image-section {
-      width: 80%;
-      max-width: 100%;
+      width: 100%;
       margin-top: 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 20px; /* Espaçamento entre as imagens */
+      flex-wrap: wrap;
     }
     
     .image-section img {
-      width: 30%;
+      width: 45%;
       max-width: 100%;
       border-radius: 10px;
       margin-bottom: 20px;
@@ -88,7 +90,7 @@
       border: none;
       border-radius: 20px;
       font-size: 16px;
-      margin-top: 40px; /* Aumento do espaçamento */
+      margin-top: 40px;
       cursor: pointer;
     }
     
@@ -98,7 +100,14 @@
       color: white;
       padding: 10px 0;
       text-align: center;
-      margin-top: 20px; /* Espaçamento do rodapé */
+      margin-top: 20px;
+    }
+
+    /* Media query para telas menores */
+    @media (max-width: 768px) {
+      .image-section img {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -110,7 +119,8 @@
     
     <div class="vsl-section">
       <video controls autoplay>
-        <source src="seu-video.mp4" type="video/mp4">
+        <!-- Inclua a URL do seu vídeo na linha abaixo -->
+        <source src="caminho/do/seu/video.mp4" type="video/mp4">
         Seu navegador não suporta vídeo HTML5.
       </video>
     </div>
@@ -127,10 +137,9 @@
     
     <div class="image-section">
       <!-- Aqui você pode inserir links das imagens -->
-      <!-- Exemplo: -->
-      <!-- <img src="imagem1.jpg" alt="Imagem 1"> -->
-      <!-- <img src="imagem2.jpg" alt="Imagem 2"> -->
-      <!-- <img src="imagem3.jpg" alt="Imagem 3"> -->
+      <!-- <img src="caminho/para/sua/imagem1.jpg" alt="Imagem 1"> -->
+      <!-- <img src="caminho/para/sua/imagem2.jpg" alt="Imagem 2"> -->
+      <!-- <img src="caminho/para/sua/imagem3.jpg" alt="Imagem 3"> -->
     </div>
     
     <div class="final-button">
