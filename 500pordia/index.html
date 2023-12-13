@@ -33,7 +33,7 @@
     
     .headline-container {
       width: 100%;
-      margin-top: 20px; /* Espaço entre a barra vermelha e a headline */
+      margin-top: 20px;
     }
     
     .headline-container h1 {
@@ -48,10 +48,8 @@
       margin-top: 20px;
     }
     
-    video {
-      width: 100%;
-      max-width: 100%;
-      border-radius: 10px;
+    .vsl-section iframe {
+      width: 100%; /* Garante responsividade do vídeo */
     }
     
     .buy-button {
@@ -72,7 +70,7 @@
       text-align: center;
       margin-top: 20px;
       border-radius: 10px;
-      display: none; /* Inicia oculto */
+      display: none;
     }
     
     .image-section {
@@ -111,7 +109,6 @@
       margin-top: 20px;
     }
 
-    /* Media query para telas menores */
     @media (max-width: 768px) {
       .image-section img {
         width: 100%;
@@ -131,8 +128,10 @@
     </div>
     
     <div class="vsl-section">
-      <!-- Código de incorporação do YouTube -->
-      <iframe width="949" height="534" src="https://www.youtube.com/embed/fmq8S-z_auc" title="Como Ganhar R$500 Por Dia No Automático" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <!-- Código de incorporação responsivo do YouTube -->
+      <div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+        <iframe width="949" height="534" src="https://www.youtube.com/embed/i4JSyhmBU3E" title="como ganhar 500 por dia no automático com infoprodutos de ticket baixo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
     </div>
     
     <div class="buy-button" id="buyButton">
@@ -168,7 +167,7 @@
     // Código para exibir a data atual
     var hoje = new Date();
     var dia = hoje.getDate();
-    var mes = hoje.getMonth() + 1; // Janeiro é 0!
+    var mes = hoje.getMonth() + 1;
     var ano = hoje.getFullYear();
     
     document.getElementById('data').innerText = dia + '/' + mes + '/' + ano;
